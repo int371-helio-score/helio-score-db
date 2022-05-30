@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  database:
+    image: mongo:5.0
+    command: mongod --auth
+    container_name: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=Int371039098103
+      - MONGO_INITDB_DATABASE=helio
+      - MONGO_INITDB_USERNAME=backend
+      - MONGO_INITDB_PASSWORD=Int371039098103
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+  
+networks:
+    default:
+      external:
+        name: helio-network
