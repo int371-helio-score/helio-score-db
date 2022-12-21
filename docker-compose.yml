@@ -8,14 +8,9 @@ services:
       - 27017:27017
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=Int371039098103
+      - MONGO_INITDB_ROOT_PASSWORD=root
       - MONGO_INITDB_DATABASE=helio
       - MONGO_INITDB_USERNAME=backend
-      - MONGO_INITDB_PASSWORD=Int371039098103
+      - MONGO_INITDB_PASSWORD=backend
     volumes:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
-  
-networks:
-    default:
-      external:
-        name: helio-network

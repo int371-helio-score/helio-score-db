@@ -2,7 +2,7 @@ dbAdmin = db.getSiblingDB("admin");
 
 db = new Mongo().getDB("helio");
 
-db.createUser({user: 'backend', pwd: 'Int371039098103', roles: [ {role: 'readWrite', db:'helio'}] });
+db.createUser({user: 'backend', pwd: 'backend', roles: [ {role: 'readWrite', db:'helio'}] });
 
 db.createCollection("account")
 db.createCollection("subject")
